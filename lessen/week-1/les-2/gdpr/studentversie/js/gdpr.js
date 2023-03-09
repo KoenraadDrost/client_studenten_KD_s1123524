@@ -70,13 +70,8 @@ class GDPR {
             date: currentDate,
             time: currentTime
         };
-        // dateObject.toString();
-        // timeObject.toString();
         const dateTimeJson = JSON.stringify(dateTimeObject);
         localStorage.setItem('gdpr-consent-datetime', dateTimeJson);
-        const test = localStorage.getItem('gdpr-consent-datetime');
-        const test2 = JSON.parse(test);
-        console.log(test2);
 
         return localStorage.getItem('gdpr-consent-choice');
     }
