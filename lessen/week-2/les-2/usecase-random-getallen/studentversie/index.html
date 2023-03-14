@@ -16,14 +16,42 @@
             requestPromises.push(fetch('http://localhost:3000/random'));
         }
 
-        const responses = //Promises.all
+        const responses = Promises.all
+        // ([promise1, promise2, promise3]).then((values) => {
+        //     console.log(values);
+        // });
 
 //student uitwerking
+        // const Promises = new Promise((resolve, reject) => {
+        //     console.log("something funny");
+        //     // index.html:19 Uncaught (in promise) ReferenceError: Cannot access 'Promises' before initialization.
+        //     // Other way below:
+        // });
+        // Promises.all([
+        //     promise1,
+        //     promise2,
+        //     promise3            
+        //     // ReferenceError: Promises is not defined
+        // ])
+        const promise1 = new Promise((resolve, reject) => {
+            resolve(requestPromises[1]);
+        })
+        async function promise2() {
+            const val = await promise1;
+            if(val > 3) {
+                return requestPromises[5];
+            }
+            else {
+                return requestPromises[7];
+            }
+        }
+        const promise3 = Promises.resolve(requestPromises[9]);
 
         let sum = 0;
         for(const response of responses) {
 
 //student uitwerking
+            sum += response;
 
         }
 
