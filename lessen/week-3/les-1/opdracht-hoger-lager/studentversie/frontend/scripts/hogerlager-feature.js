@@ -17,7 +17,13 @@ class HogerLagerFeature{
     }
 
     async submitGuess(event){
-        console.log("submitGuess werkt")
+        event.preventDefault();
+
+        const guess = document.getElementById("guess");
+        const result = await model.data.getGetal(guess.value);
+
+        const answer = document.getElementById("answer");
+        answer.innerHTML = result;
 
 //student uitwerking
 

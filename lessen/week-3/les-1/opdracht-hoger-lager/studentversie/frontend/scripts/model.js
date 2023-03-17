@@ -11,9 +11,9 @@ class Model {
             throw new Error("Gok moet een getal zijn");
         }
         
-        let antwoord = await this.data.getGetal(gok);
+        let antwoord = this.data.getGetal(gok);
 
-        return antwoord.result;
+        return antwoord;
     }
 
 }
